@@ -1,7 +1,10 @@
 'use client'
 
-import { useEffect, useState, type KeyboardEvent } from 'react'
+import { useEffect, useState } from 'react'
+
 import type { Finding, Severity } from '@/types/findings'
+import type { PageSize } from '@/lib/preferences'
+import { getPageSize, setPageSize, getNumericPageSize } from '@/lib/preferences'
 import BottomSheet from './BottomSheet'
 import SeverityBadge from './SeverityBadge'
 import FindingCard from './FindingCard'
@@ -147,6 +150,7 @@ export default function FindingsTable({ findings, searchQuery = '', pageSize = 2
   }
 
   return (
+
     <div>
       {/* Severity filter chips */}
       {findings.length > 0 && (
