@@ -113,12 +113,26 @@ export default function HistoryPage() {
             Analytics
           </a>
           {entries.length > 0 && (
-            <button
-              onClick={() => setShowConfirm(true)}
-              className="rounded-lg border border-red-500/30 px-4 py-2 text-sm text-red-400 transition hover:bg-red-500/10"
-            >
-              Clear history
-            </button>
+            <>
+              <button
+                onClick={exportHistoryCsv}
+                className="rounded-lg border border-[#2a2d3a] px-4 py-2 text-sm text-slate-400 transition hover:text-white"
+              >
+                Export CSV
+              </button>
+              <button
+                onClick={exportHistoryJson}
+                className="rounded-lg border border-[#2a2d3a] px-4 py-2 text-sm text-slate-400 transition hover:text-white"
+              >
+                Export JSON
+              </button>
+              <button
+                onClick={() => setShowConfirm(true)}
+                className="rounded-lg border border-red-500/30 px-4 py-2 text-sm text-red-400 transition hover:bg-red-500/10"
+              >
+                Clear history
+              </button>
+            </>
           )}
         </div>
       </div>
